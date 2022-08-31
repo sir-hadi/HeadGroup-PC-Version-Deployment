@@ -3,7 +3,9 @@
 to run the program we need to install some dependecy. there is a file
 called requirments.txt and packages.txt, first install the requirments using
 this command : 
+```
 pip3 install -r requirements.txt
+```
 
 be sure to install python3 first. after finishing instaling try to run the code first.
 the running time will take some time, if the its running and there is no problem then you
