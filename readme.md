@@ -1,5 +1,5 @@
-# Server Side________________________________________________________________________________
-## Dependecy and packages____________________________________________________________________
+# Server Side
+## Dependecy and packages
 to run the program we need to install some dependecy. there is a file
 called requirments.txt and packages.txt, first install the requirments using
 this command : 
@@ -11,7 +11,7 @@ dont need to install the packages.txt. if there is a error regarding some libXX-
 install packages.txt with the command below:
 xargs sudo apt-get install packages.txt
 
-## Running the server side code______________________________________________________________
+## Running the server side code
 The server uses 'ServerSideVidStream.py'. to run the
 script it needs two argument which are below:
 -> --ip : the ip address of where the server
@@ -26,12 +26,12 @@ id,x,y
 3,700,1100
 
 
-# Client Side_______________________________________________________________________________
-## Dependecy and packages____________________________________________________________________
+# Client Side
+## Dependecy and packages
 to install the dependecy use the command below on your client device
 pip3 install -r raspi-requirments.txt
 
-## Running the client side code______________________________________________________________
+## Running the client side code
 Client/Raspberry Device/Camera Device uses 'ClientVidStream.py'. to run the
 script it needs two argument which are below:
 -> --host : the ip address of where the server code is running
