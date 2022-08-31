@@ -10,7 +10,9 @@ the running time will take some time, if the its running and there is no problem
 dont need to install the packages.txt. if there is a error regarding some libXX-dev, try to 
 install packages.txt with the command below:
 
-``` xargs sudo apt-get install packages.txt ```
+``` 
+xargs sudo apt-get install packages.txt 
+```
 
 ## Running the server side code
 The server uses 'ServerSideVidStream.py'. to run the
@@ -18,7 +20,9 @@ script it needs two argument which are below:
 -> --ip : the ip address of where the server
 example command : 
 
-``` python3 ServerSideVidStream.py --ip=192.168.88.12 ```
+```
+python3 ServerSideVidStream.py --ip=192.168.88.12
+```
 
 NOTE !!! : tha program needs a csv file called 'data.csv' to run, data.csv holds
 the point of each light that should be control. data.csv must have a header 
