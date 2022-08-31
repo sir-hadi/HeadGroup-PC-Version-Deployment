@@ -1,0 +1,8 @@
+numpy
+pandas
+scipy
+imutils
+opencv-contrib-python
+tensorflow
+tensorflow-hub
+imagezmq

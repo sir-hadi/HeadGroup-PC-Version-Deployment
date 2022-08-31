@@ -20,12 +20,9 @@ from scipy.spatial import distance as dist
 # For using HTTP to POST the data to the API.
 import requests
 
-# URL for API
-URL = 'http://10.30.60.110:5050/sl_vision_post'
-
 # Print Tensorflow version and starting to load model
 print('Starting To Load Model...')
-print('TF version :',tf.__version__)
+print('TF version :', tf.__version__)
 
 # Model Folder
 module_handle = "mobilenet"
@@ -39,11 +36,17 @@ points_data = pd.read_csv('data.csv')
 # initialize the ImageHub object
 print('Starting ImageZMQ Server')
 
-# uncomment below if we are using server di ruangan Kak Reza 
-# imageHub = imagezmq.ImageHub(open_port='tcp://192.168.43.118:5555')
+# uncomment below if we are using server
+ap = argparse.ArgumentParser()
+ap.add_argument("--ip", required=True,
+	help="ip address of the server")
+args = vars(ap.parse_args())
+# URL for API
+URL = 'http://'+args['ip']+':5050/sl_vision_post'
+imageHub = imagezmq.ImageHub(open_port='tcp://'+args['ip']+':5555')
 
 # uncomment below if wa are using localhost
-imageHub = imagezmq.ImageHub(open_port='tcp://10.30.60.110:5555')
+# imageHub = imagezmq.ImageHub(open_port='tcp://10.30.60.110:5555')
 
 # initialize the dictionary which will contain  information regarding
 # when a device was last active, then store the last time the check

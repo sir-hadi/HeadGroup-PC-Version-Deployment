@@ -5,17 +5,24 @@ import argparse
 import socket
 import time
 
-# # construct the argument parser and parse the arguments
-# ap = argparse.ArgumentParser()
-# ap.add_argument("-s", "--server-ip", required=True,
-# 	help="ip address of the server to which the client will connect")
-# args = vars(ap.parse_args())
+# uncomment below till the second uncomment comment if we are using server 
+# construct the argument parser and parse the arguments
+ap = argparse.ArgumentParser()
+ap.add_argument("--host", required=True,
+	help="ip address of the server to which the client will connect")
+ap.add_argument("--id", required=True,
+	help="id of the camera")
+args = vars(ap.parse_args())
 
-# uncomment below if we are using server di ruangan Kak Reza 
-host_address = 'tcp://10.30.60.110:5555'
+host_address = 'tcp://'+args['host']+':5555'
+print(f'host is {host_address}')
+
+rpiName = args['id']
+print(f'camera id is {rpiName}')
 
 # uncomment below if wa are using localhost
 # host_address = 'tcp://localhost:5555'
+# rpiName = 1
 
 # initialize the ImageSender object with the socket address of the
 # server
@@ -25,7 +32,6 @@ sender = imagezmq.ImageSender(connect_to=host_address)
 # cause it will be use to to POST data from
 # the server, and variable rpiName will be use
 # as camID for posting the data to the database 
-rpiName = 1
 print('rpiName : ', rpiName)
 
 # get the host name, initialize the video stream, and allow the
